@@ -1,0 +1,27 @@
+.comments {
+  margin-top: 20px;
+}
+
+.comment-card {
+  margin-bottom: 10px;
+}
+
+.comment-form {
+  margin-top: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+mat-card {
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+mat-card img {
+  display: block;
+  margin: 0 auto;
+  max-height: 400px;   /* 👈 limite la hauteur */
+  max-width: 100%;     /* 👈 évite de dépasser en largeur */
+  object-fit: contain; /* 👈 conserve les proportions */
+}

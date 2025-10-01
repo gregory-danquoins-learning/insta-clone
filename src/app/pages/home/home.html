@@ -1,0 +1,36 @@
+<div class="pictures-container">
+  <mat-card *ngFor="let pic of pictures()"
+            class="clickable-card"
+            (click)="goToDetail(pic.id)">
+
+    <mat-card-header>
+      <mat-card-title>{{ pic.title }}</mat-card-title>
+      <mat-card-subtitle>par {{ pic.author.displayName }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <img mat-card-image [src]="pic.image" [alt]="pic.title" />
+
+    <mat-card-content>
+      <p>{{ pic.description }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <app-like-button 
+      [pictureId]="pic.id" 
+      [initialCount]="getLikesCount(pic)" 
+      [likes]="pic.likes">
+    </app-like-button>
+
+    </mat-card-actions>
+
+  </mat-card>
+</div>
+
+
+<mat-paginator
+  [length]="totalElements"
+  [pageSize]="pageSize"
+  [pageIndex]="pageIndex"
+  [pageSizeOptions]="[5, 10, 20]"
+  (page)="onPageChange($event)">
+</mat-paginator>

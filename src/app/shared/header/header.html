@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <span class="logo">InstaClone</span>
+
+  <span class="spacer"></span>
+
+  <!-- Navigation visible seulement si connecté -->
+  <ng-container *ngIf="auth.isLoggedIn()()">
+    <button mat-button routerLink="/">Accueil</button>
+    <button mat-button routerLink="/my-pictures">Mes images</button>
+  </ng-container>
+
+  <!-- Actions Login / Logout -->
+  <button *ngIf="!(auth.isLoggedIn()())" mat-button routerLink="/login">Login</button>
+  <button *ngIf="auth.isLoggedIn()()" mat-button (click)="logout()">Logout</button>
+</mat-toolbar>

@@ -1,0 +1,8 @@
+.register-card {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+}
+.full-width {
+  width: 100%;
+}

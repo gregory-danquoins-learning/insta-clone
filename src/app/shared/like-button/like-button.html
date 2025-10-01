@@ -1,0 +1,8 @@
+<button mat-icon-button (click)="toggleLike($event)">
+
+  <mat-icon color="warn" *ngIf="liked()">favorite</mat-icon>
+
+
+  <mat-icon *ngIf="!liked()">favorite_border</mat-icon>
+</button>
+<span>{{ count() }}</span>
